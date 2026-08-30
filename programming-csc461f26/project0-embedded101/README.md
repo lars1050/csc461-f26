@@ -1,8 +1,9 @@
 ##### CSC461 Intelligent Systems
 
 ### Project 0 : Getting Started with Embedded Systems
-> CODE DUE: XXX <br>
-> Submit via GitLab (in your csc461 repo)
+Worksheets are due daily. <br>
+Code is due by the end of class Thursday, September 10 <br>
+Submit via GitLab (in your csc461 repo)
 
 
 #### Learning Objectives
@@ -29,13 +30,7 @@ When finished with this lab, students will have/be able to:
 - Hertz, frequency
 - peripheral, sonar sensor, serial communication
 
-
-#### Assignment
-
-1. Get everything set up as described below.
-2. Test your setup with the provided main.c.
-3. Add the yellow LED to the "sanity check." Note: you have to check whether the yellow led is turned on by setting the pin high or low. Just try it and see what happens. The yellow and green should both be on and off at the same time.
-4. Add button C to the while loop. Remember that you have to set up the button pin as input. Whenever button C is pressed, the yellow LED should turn on.
+<hr>
 
 #### Your First (and Second) Program
 
@@ -52,6 +47,8 @@ Modify the delay, flash again, and see how the behavior changes.
 Load the Example ASCIITable (File-Examples-04.Communication-ASCIITable). Flash it. Open a serial terminal (Tools-Serial Monitor). Relate what is happening on the monitor to the code in the example. 
 
 > It is time to learn about registers, ports, pins, bitwise operators, and reading schematics. Follow along with the lecture, then complete the worksheet.
+
+<hr>
 
 #### Working with Peripherals
 
@@ -74,6 +71,10 @@ Note that LEDs can be "backwards." You have to connect power (i.e. GPIO) to the 
 Create a new sketch called myLED.ino (you can copy Blink.ino). Use the schematic to determine which pin to set as output. Toggle the on-board LED at 2Hz and the breadboard LED at 4Hz. Careful in how you "schedule" these tasks so they do not interfere with each other.
 
 _Toggle_ means to change the state of the LED (from on to off or off to on). _Blink_ is to  turn the LED on then off. In other words, there is 1 blink for every 2 toggles. I try to be consistent in the requirements about which I mean. Please let me know if you are not sure what is meant in any of the project directions.
+
+> Follow along in the lecture, then complete the worksheet.
+
+<hr>
 
 #### Command Line Compilation and Makefiles
 

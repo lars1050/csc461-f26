@@ -1,10 +1,9 @@
-##### CSC461 Intelligent Systems
-
+### CSC461 Intelligent Systems
 ### Project 0 : Getting Started with Embedded Systems
+
 Worksheets are due daily. <br>
 Code is due by the end of class Thursday, September 10 <br>
-Submit via GitLab (in your csc461 repo)
-
+Submit via GitLab (in the csc461 repo that you were invited to)
 
 #### Learning Objectives
 
@@ -46,7 +45,7 @@ Modify the delay, flash again, and see how the behavior changes.
 
 Load the Example ASCIITable (File-Examples-04.Communication-ASCIITable). Flash it. Open a serial terminal (Tools-Serial Monitor). Relate what is happening on the monitor to the code in the example. 
 
-> It is time to learn about registers, ports, pins, bitwise operators, and reading schematics. Follow along with the lecture, then complete the worksheet.
+> It is time to learn about kernels, scheduling, cyclic executives, datasheets, schematics, registers, ports, and pins. Follow along with the lecture, then complete the worksheet.
 
 <hr>
 
@@ -72,7 +71,7 @@ Create a new sketch called myLED.ino (you can copy Blink.ino). Use the schematic
 
 _Toggle_ means to change the state of the LED (from on to off or off to on). _Blink_ is to  turn the LED on then off. In other words, there is 1 blink for every 2 toggles. I try to be consistent in the requirements about which I mean. Please let me know if you are not sure what is meant in any of the project directions.
 
-> Follow along in the lecture, then complete the worksheet.
+> It is time to learn about datasheets, schematics, registers, ports, pins, bitmasks, and bitwise operators. Follow along with the lecture, then complete the worksheet.
 
 <hr>
 

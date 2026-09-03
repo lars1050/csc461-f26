@@ -86,10 +86,10 @@ C-language Vocabulary:
 - source file (e.g. io.c or main.c). It might be a .c file that contains variable and function definitions. There must be a file that has the `main` function defined (by convention, it is defined in main.c).
 
 
-First, get your hardware ready. Follow the directions in the hardware-install.md file.
+First, get your hardware ready. Follow the directions in the avr toolchain set-up file: 
+https://github.com/lars1050/csc461-f26/blob/main/hardware/avr-toolchain-setup.md
 
 > It is time to learn about C compilation. Follow along with the lecture, then complete the worksheet.
-
 
 At this point, you should be able to use the make command and the Makefile to compile then flash the Metro board.
 

@@ -84,7 +84,7 @@ Recall that C and C++ manage code reuse by separating the declarations and defin
 
 1. Copy the folder proximity_avr into a new "Arduino" folder proximity_avr_reuse.
 2. The file sonic.h has been provided for you. Copy it into this new folder.
-3. Create the file sonic.cpp by copying the sonic.h file using your file explorer. Arduino compiles code with C++, so the file name has to have the .cpp extension. C++ is backwards compatible, so that any C code can be compiled with a C++ compiler (but not the other way round).
+3. Create the file sonic.cpp by copying the proximity_avr.ion file using your file explorer (save it as sonic.cpp). Arduino compiles code with C++, so the file name has to have the .cpp extension. C++ is backwards compatible, so that any C code can be compiled with a C++ compiler (but not the other way round).
 4. Open this new Sketch in Arduino and notice the tabs for the other files.
 5. Edit the files so they all work together.
 

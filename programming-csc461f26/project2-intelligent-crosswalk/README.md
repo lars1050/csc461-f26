@@ -75,7 +75,7 @@ There are different ways to interface with a device. Each has its place.
 
 > Do a little research and answer question #1 on the worksheet.
 
-[https://docs.google.com/document/d/1rBTPShay5TCSufjIB8oEMQnjh6JrDCe4KnqFzrEU9OA/edit?usp=sharing](https://docs.google.com/document/d/1XRQfhJ0z-954dRxPkF9CPSxahgAHy3WKoSSBqKFh3tY/edit?usp=drive_link)
+https://docs.google.com/document/d/1duvxx7sKKPYnyRmG40upC8GLMvb92-0iNF-fRQUgxnM/edit?usp=drive_link
 
 #### Implementing the Button 
 

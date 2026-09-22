@@ -85,7 +85,7 @@ First, wire up the button and use the code in the above Arduino link to output t
 
 **Create an Arduino sketch button\_test**
 
-Second, in the Arduino sketch folder, create a header and source file that manages the button (called button.h and button.c). In the header, define the appropriate port and pin for the button. Declare the function `int check_status()` that returns the current status of the button. You will add to this file later to determine when the button has been pressed then released.
+Second, in the Arduino sketch folder, create a header and source file that manages the button (called button.h and button.c). In the header, define the appropriate port and pin for the button; declare a function to initialize the button port/pin; and declare the function `int check_status()` that will return the current status of the button. Define those functions in button.c. You will add to this file later to determine when the button has been pressed then released.
 
 Third, in the button\_test Arduino sketch, initialize the on-board LED and the button (by calling the function in button.c). In the loop, blink the LED at 2 Hz (that is 4 toggles) and poll for a button state at 10 Hz. Whenever the state of the button changes from released to pressed, turn the LED off. Whenever the state of the button changes from pressed to released, resume blinking the LED.
 

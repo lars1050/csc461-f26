@@ -91,12 +91,51 @@ Third, in the button\_test Arduino sketch, initialize the on-board LED and the b
 
 > Answer the corresponding questions on the worksheet.
 
-We will start with this. More to come ...
+The Arduino code initializes the button as input and enables the pullup resistor. In your button.h file, you need to do the same.
 
+- CLEAR the appropriate pin in the DDRx to initialize as input
+- SET the same pin in the PORTx to enable the pullup resistor on that pin
+
+As a reminder, it is super helpful to use your #defines to define the registers that correspond to the port and pin that you are using on the board. This allows you to easily connect to a different pin and change the code in one place.
+
+#### Button State Machine
+
+In your files to implement the button, add state machine code that manages three states: wait, press, release, depicted below. 
+
+<img src="states.png" alt="Description" width="300" />
+
+The state machine is implemented in the check\_status() function with help from a reset function. 
+
+- Use #define's to define states WAIT, PRESS, RELEASE as 0, 1, and 2.
+- Return one of these states from the `check_status` function.
+- Create a function reset() that will set a variable to "true" -- C does not have booleans. Traditionally, 0 is false and 1 is true.
+- Use if-statements for the state machine, like this algorithm ...
+
+```
+STATE MACHINE ALGORITHM
+
+check status of button
+
+if WAIT==state && button pressed:
+	delay for 10 ms to cover bounce
+	change state to PRESS
+else if PRESS==state && button released:
+	delay for 10 ms
+	change state to RELEASE
+else if RELEASE==state && reset:
+	reset = false
+	change state to WAIT
+else
+	something is not right, should not be here
+```
 
 #### Complete the Prototype
 
+Create a new sketch crosswalk.ino. Copy your button code and your ultrasonic sensor code into this folder. For now, you can use the ultrasonic sensor as your pedestrian motion sensor.
+
 Now that you have all the pieces, create an intelligent crosswalk prototype that uses LEDs to signal vehicles to stop and pedestrians to cross. It uses a button for pedestrians to indicate they want to cross, and it uses motion detection to determine when the pedestrian has finished crossing the street.
+
+_In this folder there is an example of leds.c and a readme about creating an leds.h. This is optional, so you decide if you have the interest and time to implement it._
 
 
 

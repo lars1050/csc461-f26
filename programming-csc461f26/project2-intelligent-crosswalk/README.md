@@ -29,13 +29,16 @@ When finished with this lab, students will be able to:
 
 Specifically, consider 2 systems on each side of a "road." The flow of states is as follows:
 
+On-board LED: traffic light
+Breadboard LED: pedestrian light
+
 1. A button is pressed on one side of the road.
-2. Blink the on-board LED at 2 Hz (that's 4 toggles) to tell traffic to stop. 
-3. Wait 5 seconds while flashing that LED.
-4. Turn on a breadboard LED (solid) to let pedestrian traffic cross. 
+2. Start blinking the on-board led at 2 Hz (that's 4 toggles) to tell traffic to stop. 
+3. Wait 5 seconds while flashing the traffic LED.
+4. Turn on a breadboard LED (solid) to let pedestrian traffic cross AND continue flashing the traffic LED.
 5. Actively check for motion on other side of road. 
-6. When motion sensed (i.e. person has crossed the street), turn the breadboard LED off.
-7. Wait for 5 seconds, then turn the on-board led off. 
+6. When motion sensed (i.e. person has crossed the street), turn the breadboard (pedestrian) LED off, but keep flashing the traffic LED.
+7. Wait for 5 seconds, then turn the on-board LED off. 
 
 You can create 2 systems that monitor the 2 sides of the road. They cannot talk to each other (which of course is not ideal). They should not interfere with each other's operation. We will assume that pedestrian traffic comes from only one side at a time and there is only one person at a time who completes the crossing before another one appears (this is very terrible assumption for a crosswalk!, but that is what we are doing).
 

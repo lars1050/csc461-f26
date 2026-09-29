@@ -132,6 +132,13 @@ else
 	something is not right, should not be here
 ```
 
+#### OPTIONAL Motion Sensor
+
+If you are interested in experimenting with a new motion sensor, you can try a Pyroelectric Infrared Motion sensor (PIR). Ask Dr. Larson for a sensor. Lot's of good stuff here:
+
+https://community.microcenter.com/kb/articles/639-inland-pir-motion-sensor
+
+
 #### Complete the Prototype
 
 Create a new sketch crosswalk.ino. Copy your button code and your ultrasonic sensor code into this folder. For now, you can use the ultrasonic sensor as your pedestrian motion sensor.

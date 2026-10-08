@@ -5,6 +5,10 @@ Deliverables and Due Dates (submit via Gitlab)
 - State Machine Due Thursday, Oct 8 start of class
 - Prototype Due Tuesday, Oct 13 start of class
 
+There is a worksheet that goes along with this assignment (posted on Moodle). Please work with your group mates on the worksheet.
+
+As for the code, you can work independently or as a group. If it makes it easier, you can use a repo to collaboratively develop the code.
+
 ### Learning Objectives
 
 When finished with this lab, students will be able to:
@@ -106,15 +110,30 @@ Modify the provided files so that it can receive a signal from either camera0 (p
 
 Clean up the sketch ext\_int.ino and its files so that it only pays attention to INT0. This will be used to signal when it is time to record the feed.
 
-More on this for Thursday ...
-
 <hr>
 
 ### Complete the Prototype
 
-Create a new sketch surveillance.ino.
+Create the complete prototyp in a new sketch surveillance.ino. 
 
-More on this for Thursday ...
+> Please heavily comment your code (with meaningful information).
+
+Once you have the button interrupt working, the real challenge of this assignment is code organization (and then debugging it). Tracking flow-of-control in a dynamic system with interrupts is very challenging. Luckily, you aren't really communicating with other devices that can interrupt at any time, except the button, and you have control over that.
+
+Look at the authorizing.ino sketch. This gives you a model for putting the prototype together. It has the structure of a state machine. It simulates signals from the camera modules to indicate authorization, and it has a stub for simulating a signal to start the feed. Notice how the system transitions to a new state. 
+
+The code in the loop will start to get very unwieldy. It might be useful to break some of it down into function calls. For example, you might have a function run\_authorize() and when the state machine enters that state, it simply calls that function. This could be in a separate file or can stay in the surveillance sketch.
+
+Think carefully about the reset after the person leaves, which should be the same initialization process before the system starts. It might make sense to have a function that manages all of that or perhaps a reset/initialize function for each of the components. Again, a question of code organization.
+
+The state of the led, particularly the rate of blink, is another challenging piece. It will be useful to think about how you will maintain the blinking led while managing these other tasks/states. My approach would be to track the state of the led and manage that outside the state machine, but if it makes more sense to you to manage it inside each state, that is also a viable approach.
+
+Note that I kept using the filename camera\_coms in the different sketches. When you put all the pieces together, you will have to fix this. Please name files in a way that makes it clear what they are responsible for.
+
+
+
+
+
 
 
 

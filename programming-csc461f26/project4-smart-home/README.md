@@ -50,10 +50,13 @@ There are a collection of tasks that need to be managed for this prototype.
 
 1. Status report using the serial monitor (imagine this is the communication to the network for the web app).
 
+<hr>
+
 ### LED Lighting Control
 
 Use timer/counter 2 to generate a PWM waveform to control an led attached to pin OC2B. Example code has been provided that varies the brightness of the led. The breadboard led must use the OC2B pin which corresponds to Port D pin 3. The control of the brightness through the PWM is managed through the hardware. You do not need an interrupt or turn the led on or off. In software, you will modify the duty cycle by setting the OCR2B register, which in turn modifies the waveform. Sample code has been provided.
 
+<hr>
 
 ### Scheduled Tasks and External Interrupt
 
@@ -72,6 +75,8 @@ Tasks will be scheduled using timer interrupts to control the frequency of those
 **_Time Keeping_**. Use the OCR1A match interrupt to also update a global time every 1 second. Equate 1 second to 1 hour of the day. Be sure to modulo 24. _If we did need the time, we would likely have a real-time clock peripheral added to the system that keeps "human" time, or maybe we could get it from the web the system were networked._
 
 **_Status Report_**. Use the OCR1A match interrupt to also release a status report every 5 seconds (i.e. every 5th time the interrupt triggers) by setting a flag. In the main loop, the task prints information to the serial monitor including time of day, ambient light average, and current room lighting condition.  
+
+<hr>
 
 ### Complete the Prototype
 

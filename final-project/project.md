@@ -1,6 +1,6 @@
 ### Intelligent Systems Final Project
 
-**First, Pitch Your Idea** <br>
+**First, Pitch Your Idea**
 **DUE: Thursday, October 29**
 
 The learning goal of this project is for each student to 1) increase their knowledge of intelligent systems, as well as 2) acquire or improve a skill related to the design, construction, and/or analysis of an intelligent system.

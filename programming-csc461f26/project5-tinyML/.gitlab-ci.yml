@@ -1,0 +1,39 @@
+# Checks submission files automatically.
+# On a merge request, only the CSVs added or changed in that merge request are
+# checked, so one broken file never blocks anyone else's submission.
+
+validate-submissions:
+  image: python:3.12
+  variables:
+    GIT_DEPTH: 0            # full history, so the merge request can be diffed
+  before_script:
+    - pip install --quiet pandas numpy
+  script:
+    - |
+      if [ -n "$CI_MERGE_REQUEST_DIFF_BASE_SHA" ]; then
+        FILES=$(git diff --name-only --diff-filter=AM "$CI_MERGE_REQUEST_DIFF_BASE_SHA" HEAD -- 'submissions/*.csv')
+        OTHER=$(git diff --name-only "$CI_MERGE_REQUEST_DIFF_BASE_SHA" HEAD | grep -v '^submissions/' || true)
+        if [ -n "$OTHER" ]; then
+          echo "This merge request changes files outside submissions/:"
+          echo "$OTHER"
+          echo "Submissions should only add or update your own submissions/<ID>.csv."
+          exit 1
+        fi
+        CHANGED=$(git diff --name-only "$CI_MERGE_REQUEST_DIFF_BASE_SHA" HEAD -- submissions/ | grep -v '\.gitkeep$' || true)
+        if [ "$(echo "$CHANGED" | grep -c .)" -gt 1 ]; then
+          echo "This merge request changes more than one submission file:"
+          echo "$CHANGED"
+          echo "Each student submits only their own submissions/<ID>.csv."
+          exit 1
+        fi
+      else
+        FILES=$(ls submissions/*.csv 2>/dev/null || true)
+      fi
+      if [ -z "$FILES" ]; then
+        echo "No submission files to check."
+        exit 0
+      fi
+      python tools/validate.py $FILES
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
